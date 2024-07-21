@@ -1,9 +1,0 @@
-{
-    "name": "sos-web",
-    "version": "1.0.0",
-    "description": "SOS emergency website",
-    "scripts": {
-      "build": "echo 'No build step needed'"
-    }
-  }
-  
