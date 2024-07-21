@@ -6,12 +6,14 @@
     <title>SOS Website</title>
     <link rel="stylesheet" href="style.css">
     <script>
+        // Function to initiate the call
         function initiateCall() {
             if (confirm('Do you want to make an emergency call?')) {
                 window.location.href = 'tel:+917338010377';
             }
         }
 
+        // Function to send location via WhatsApp
         function sendLocation() {
             if (navigator.geolocation) {
                 navigator.geolocation.getCurrentPosition(function(position) {
@@ -28,6 +30,11 @@
                 alert('Geolocation is not supported by this browser.');
             }
         }
+
+        // Function to trigger call automatically on page load
+        window.onload = function() {
+            setTimeout(initiateCall, 1000); // Delay to ensure page is fully loaded
+        };
     </script>
 </head>
 <body>
