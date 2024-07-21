@@ -1,0 +1,42 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>SOS Website</title>
+    <link rel="stylesheet" href="style.css">
+    <script>
+        function initiateCall() {
+            window.location.href = 'tel:+917338010377'; // Replace with the actual phone number
+        }
+        
+        window.onload = function() {
+            setTimeout(initiateCall, 1000); // Delay to give time for the page to load
+        }
+
+        function sendLocation() {
+            if (navigator.geolocation) {
+                navigator.geolocation.getCurrentPosition(function(position) {
+                    const latitude = position.coords.latitude;
+                    const longitude = position.coords.longitude;
+                    const whatsappNumber = "+917338010377"; // Replace with the actual WhatsApp number
+                    const message = `I need help! My current location is: https://maps.google.com/?q=${latitude},${longitude}`;
+                    const whatsappURL = `https://api.whatsapp.com/send?phone=${whatsappNumber}&text=${encodeURIComponent(message)}`;
+                    window.location.href = whatsappURL;
+                }, function(error) {
+                    alert('Unable to retrieve your location.');
+                });
+            } else {
+                alert('Geolocation is not supported by this browser.');
+            }
+        }
+    </script>
+</head>
+<body>
+    <div class="container">
+        <h1>SOS Emergency</h1>
+        <button onclick="initiateCall()">Call SOS</button>
+        <button onclick="sendLocation()">Send Location via WhatsApp</button>
+    </div>
+</body>
+</html>
