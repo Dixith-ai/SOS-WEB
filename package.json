@@ -1,10 +1,9 @@
 {
-  "name": "sos-web",
-  "version": "1.0.0",
-  "description": "SOS emergency website",
-  "main": "index.html",
-  "scripts": {
-    "build": "echo 'No build step needed'"
-  },
-  "dependencies": {}
-}
+    "name": "sos-web",
+    "version": "1.0.0",
+    "description": "SOS emergency website",
+    "scripts": {
+      "build": "echo 'No build step needed'"
+    }
+  }
+  
