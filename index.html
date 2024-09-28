@@ -8,22 +8,29 @@
     <link rel="stylesheet" href="style.css">
 
     <!-- Google / Search Engine Tags -->
-  <meta itemprop="name" content="SOS Website">
-  <meta itemprop="description" content="Self Developed SOS website">
-  <meta itemprop="image" content="https://raw.githubusercontent.com/Dixith-ai/SOS-WEB/master/images/opengraph.jpeg">
+    <meta itemprop="name" content="SOS Website">
+    <meta itemprop="description" content="Self Developed SOS website">
+    <meta itemprop="image" content="https://raw.githubusercontent.com/Dixith-ai/SOS-WEB/master/images/opengraph.jpeg">
 
-  <!-- Facebook Meta Tags -->
-  <meta property="og:url" content="https://sos-web-dixith-ais-projects.vercel.app/">
-  <meta property="og:type" content="website">
-  <meta property="og:title" content="SOS Website">
-  <meta property="og:description" content="Self Developed SOS website">
-  <meta property="og:image" content="https://raw.githubusercontent.com/Dixith-ai/SOS-WEB/master/images/opengraph.jpeg">
+    <!-- Facebook Meta Tags -->
+    <meta property="og:url" content="https://sos-web-dixith-ais-projects.vercel.app/">
+    <meta property="og:type" content="website">
+    <meta property="og:title" content="SOS Website">
+    <meta property="og:description" content="Self Developed SOS website">
+    <meta property="og:image" content="https://raw.githubusercontent.com/Dixith-ai/SOS-WEB/master/images/opengraph.jpeg">
 
     <script>
         // Function to initiate the call
         function initiateCall() {
             if (confirm('Do you want to make an emergency call?')) {
                 window.location.href = 'tel:+917338010377';
+            }
+        }
+
+        // Function to call emergency number 112
+        function callEmergency112() {
+            if (confirm('Do you want to call 112 emergency services?')) {
+                window.location.href = 'tel:112';
             }
         }
 
@@ -61,6 +68,7 @@
     <div class="container">
         <h1>SOS Emergency</h1>
         <button onclick="initiateCall()">Call SOS</button>
+        <button onclick="callEmergency112()" class="alert-button">Call 112</button> <!-- Highlighted button for 112 -->
         <button onclick="sendLocation()">Send Location via WhatsApp</button>
         <button onclick="playAlertSound()" class="alert-button">ALERT!!</button>
         <audio id="alert-sound" src="audio/alert-sound.mp3" preload="auto" loop></audio>
